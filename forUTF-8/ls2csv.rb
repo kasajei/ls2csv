@@ -2,10 +2,10 @@ require "csv"
 require "kconv"
 
 # please set defaults language folder
-localizedFolderName = "ja.lproj"
-File::open(localizedFolderName + "/Localizable.strings") do |f|
+localizedFolderName = ""
+File::open(localizedFolderName + "Localizable.strings") do |f|
 	CSV.open("localizable.txt","w") do |csv|
-		csv << ["ViewController","LineComment","key","ja","en","for system",'=IF(ISBLANK($C1),$A1,""""&$C1&""""&"="&""""&D1&""";"&$B1)']
+		csv << ["ViewController","// LineComment","key","ja","en","for system",'=IF(ISBLANK($C1),$A1,""""&$C1&""""&"="&""""&D1&""";"&$B1)']
 		keyAry = []
 		f.each do |line|
       if /^\/\// =~ line # this line is comment
